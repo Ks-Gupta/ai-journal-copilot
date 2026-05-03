@@ -15,8 +15,6 @@
   <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi"/>
   <img src="https://img.shields.io/badge/AI-Groq_LLM-purple?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Styling-TailwindCSS-38BDF8?style=for-the-badge&logo=tailwindcss"/>
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge"/>
-</p>
 
 ---
 
