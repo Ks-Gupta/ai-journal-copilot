@@ -20,7 +20,7 @@
 
 ## 🌐 Live Demo
 
-🚧 Coming Soon (Vercel + Render Deployment)
+https://ai-journal-copilot.vercel.app
 
 ---
 
@@ -172,16 +172,6 @@ POST /analyze
 ```
 POST /improve
 ```
-
----
-
-## 📸 Screenshots
-
-> Add screenshots here:
-
-* Landing Page
-* Results Dashboard
-* History Page
 
 ---
 
