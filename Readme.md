@@ -89,6 +89,8 @@ D --> E
 E --> F[Next.js Frontend Dashboard]
 F --> G[Visualization + Insights]
 ````
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/d5538763-6365-4833-ad7b-de4af56b1922" />
+
 
 ---
 
