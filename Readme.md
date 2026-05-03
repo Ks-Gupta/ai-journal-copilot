@@ -1,10 +1,3 @@
-You’re very close — just a few small markdown mistakes are breaking the rendering. I’ve fixed everything for you below (clean, professional, and GitHub-perfect).
-
----
-
-# ✅ FIXED README (copy–paste this)
-
-````md
 # 🚀 AI Journal Copilot
 
 <p align="center">
@@ -242,7 +235,6 @@ Backend & AI Systems Enthusiast
 <p align="center">
   ⭐ Star this repo if you found it useful!
 </p>
-```
 
 ---
 
