@@ -1,11 +1,10 @@
-Alright — now we take this from “good” → **FAANG-level showcase project** 🚀
-This version is designed to impress **recruiters, hiring managers, and GitHub visitors instantly**.
-
-Just copy–paste this as your `README.md` 👇
+You’re very close — just a few small markdown mistakes are breaking the rendering. I’ve fixed everything for you below (clean, professional, and GitHub-perfect).
 
 ---
 
-````md id="faang_readme_001"
+# ✅ FIXED README (copy–paste this)
+
+````md
 # 🚀 AI Journal Copilot
 
 <p align="center">
@@ -21,7 +20,7 @@ Just copy–paste this as your `README.md` 👇
 <p align="center">
   <img src="https://img.shields.io/badge/Frontend-Next.js-black?style=for-the-badge&logo=next.js"/>
   <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi"/>
-  <img src="https://img.shields.io/badge/AI-Groq%20LLM-purple?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/AI-Groq_LLM-purple?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Styling-TailwindCSS-38BDF8?style=for-the-badge&logo=tailwindcss"/>
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge"/>
 </p>
@@ -47,43 +46,43 @@ Choosing the right journal for a research paper is:
 
 **AI Journal Copilot** automates this process by:
 
-- Analyzing your research abstract
-- Identifying domain and subfield
-- Recommending relevant journals
-- Predicting acceptance probability
-- Suggesting improvements
+- Analyzing your research abstract  
+- Identifying domain and subfield  
+- Recommending relevant journals  
+- Predicting acceptance probability  
+- Suggesting improvements  
 
 ---
 
 ## ⚡ Key Features
 
 ### 🔍 Intelligent Abstract Analysis
-- NLP-based understanding of research content
-- Detects methodology, results, and validation signals
+- NLP-based understanding of research content  
+- Detects methodology, results, and validation signals  
 
 ### 🎯 Journal Recommendation Engine
-- Suggests top journals with match scores
-- Ranked output for decision-making
+- Suggests top journals with match scores  
+- Ranked output for decision-making  
 
 ### 📊 Acceptance Probability Prediction
-- Custom scoring system (not raw AI output)
-- Deterministic + explainable logic
+- Custom scoring system (not raw AI output)  
+- Deterministic + explainable logic  
 
 ### 💡 AI Improvement Suggestions
-- Highlights missing components
-- Improves clarity and structure
+- Highlights missing components  
+- Improves clarity and structure  
 
 ### 🧠 Dynamic Scoring System
 - Evaluates:
-  - Length
-  - Methodology
-  - Results
-  - Experimental validation
+  - Length  
+  - Methodology  
+  - Results  
+  - Experimental validation  
 
 ### 📁 History Tracking
-- Saves past analyses
-- Real-time updates
-- Click to reload results
+- Saves past analyses  
+- Real-time updates  
+- Click to reload results  
 
 ---
 
@@ -129,7 +128,7 @@ F --> G[Visualization + Insights]
 
 ### 1️⃣ Clone Repository
 
-```bash id="clone_repo"
+```bash
 git clone https://github.com/Ks-Gupta/ai-journal-copilot.git
 cd ai-journal-copilot
 ```
@@ -138,20 +137,20 @@ cd ai-journal-copilot
 
 ### 2️⃣ Backend Setup
 
-```bash id="backend_setup"
+```bash
 cd backend
 pip install -r requirements.txt
 ```
 
 Create `.env`:
 
-```env id="env_setup"
+```env
 GROQ_API_KEY=your_api_key_here
 ```
 
 Run:
 
-```bash id="run_backend"
+```bash
 uvicorn main:app --reload
 ```
 
@@ -159,7 +158,7 @@ uvicorn main:app --reload
 
 ### 3️⃣ Frontend Setup
 
-```bash id="frontend_setup"
+```bash
 cd frontend
 npm install
 npm run dev
@@ -171,13 +170,13 @@ npm run dev
 
 ### Analyze Abstract
 
-```http id="api_analyze"
+```
 POST /analyze
 ```
 
 ### Improve Abstract
 
-```http id="api_improve"
+```
 POST /improve
 ```
 
@@ -225,19 +224,17 @@ POST /improve
 
 Contributions are welcome!
 
-```bash id="contribute"
 1. Fork repo
 2. Create branch
 3. Commit changes
 4. Open PR
-```
 
 ---
 
 ## 👩‍💻 Author
 
 **Khushi Gupta**
-Tech Graduate Trainee @Taylor and Francis 
+Tech Graduate Trainee @ Taylor & Francis
 Backend & AI Systems Enthusiast
 
 ---
@@ -246,3 +243,6 @@ Backend & AI Systems Enthusiast
   ⭐ Star this repo if you found it useful!
 </p>
 ```
+
+---
+
