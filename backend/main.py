@@ -199,7 +199,15 @@ Abstract:
             parsed["score_breakdown"] = final_breakdown
 
         except Exception:
-            parsed = {"raw_output": raw_result}
+         parsed = {
+                "domain": "Unknown",
+                "subfield": "Unknown",
+                "journals": [],
+                "acceptance_probability": 50,
+                "reasons": ["Could not fully analyze the abstract"],
+                "improvements": ["Try refining your abstract"],
+                "score_breakdown": ["⚠ AI response parsing failed"]
+        }
 
         return {
             "status": "success",
