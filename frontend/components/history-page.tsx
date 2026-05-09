@@ -2,8 +2,9 @@
 
 import React from "react"
 
+
 type HistoryItem = {
-id: number
+id: string
 timestamp: string
 abstract: string
 domain: string
@@ -15,9 +16,10 @@ improvements: string[]
 }
 
 interface Props {
-history: HistoryItem[]
-onSelectHistory: (item: HistoryItem) => void
+  history: HistoryItem[]
+  onSelectHistory: (item: HistoryItem) => void
 }
+
 
 export function HistoryPage({ history, onSelectHistory }: Props) {
 return ( <div className="space-y-6 animate-fade-in">

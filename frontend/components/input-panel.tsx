@@ -1,22 +1,33 @@
 'use client'
 
 import { useState } from 'react'
-import { Sparkles, Trash2, FileText, Loader2 } from 'lucide-react'
+import { Trash2, FileText, Loader2, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
+import { cn } from '@/lib/utils'
 
 interface InputPanelProps {
   abstract: string
   onAbstractChange: (value: string) => void
   onAnalyze: () => void
   isLoading: boolean
+  autoAnalyze?: boolean
+  onAutoAnalyzeChange?: (v: boolean) => void
 }
 
 const EXAMPLE_ABSTRACT = `This study investigates the application of transformer-based neural networks for automated detection of diabetic retinopathy in fundus images. We propose a novel attention mechanism that focuses on clinically relevant regions of the retina, achieving state-of-the-art performance on benchmark datasets. Our model demonstrates 97.3% sensitivity and 96.8% specificity, outperforming existing methods while requiring significantly less computational resources. The findings suggest that AI-assisted screening could substantially improve early detection rates in resource-limited settings, potentially preventing vision loss in millions of patients worldwide.`
 
 const MAX_CHARS = 5000
 
-export function InputPanel({ abstract, onAbstractChange, onAnalyze, isLoading }: InputPanelProps) {
+export function InputPanel({
+  abstract,
+  onAbstractChange,
+  onAnalyze,
+  isLoading,
+  autoAnalyze,
+  onAutoAnalyzeChange,
+}: InputPanelProps) {
+  const autoActive = Boolean(autoAnalyze) && abstract.trim().length >= 200
   const charCount = abstract.length
   const charPercentage = (charCount / MAX_CHARS) * 100
 
@@ -38,6 +49,24 @@ export function InputPanel({ abstract, onAbstractChange, onAnalyze, isLoading }:
           </p>
         </div>
         <div className="flex items-center gap-2">
+          {onAutoAnalyzeChange && (
+            <label
+              className="inline-flex cursor-pointer items-center gap-2 rounded-md px-2 py-1 text-xs text-muted-foreground hover:text-foreground"
+              title={
+                autoAnalyze
+                  ? 'Re-runs 1.5s after you stop typing'
+                  : 'Click Analyze to run manually'
+              }
+            >
+              <input
+                type="checkbox"
+                checked={!!autoAnalyze}
+                onChange={(e) => onAutoAnalyzeChange(e.target.checked)}
+                className="h-3 w-3 cursor-pointer accent-foreground"
+              />
+              Auto re-run
+            </label>
+          )}
           <Button
             variant="ghost"
             size="sm"
@@ -83,6 +112,12 @@ export function InputPanel({ abstract, onAbstractChange, onAnalyze, isLoading }:
             {charCount.toLocaleString()} / {MAX_CHARS.toLocaleString()}
           </span>
         </div>
+
+        {autoActive && !isLoading && (
+          <p className="mt-2 text-[11px] text-muted-foreground">
+            Will re-run shortly after you stop typing
+          </p>
+        )}
       </div>
 
       <div className="mt-6 flex justify-center">
@@ -90,23 +125,18 @@ export function InputPanel({ abstract, onAbstractChange, onAnalyze, isLoading }:
           onClick={onAnalyze}
           disabled={isLoading || !abstract.trim()}
           size="lg"
-          className="group relative overflow-hidden rounded-xl bg-primary px-8 py-6 text-base font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/25 disabled:opacity-50"
+          className="gap-2 px-8"
         >
-          <span className="relative z-10 flex items-center gap-2">
-            {isLoading ? (
-              <>
-                <Loader2 className="h-5 w-5 animate-spin" />
-                Analyzing...
-              </>
-            ) : (
-              <>
-                <Sparkles className="h-5 w-5 transition-transform group-hover:scale-110" />
-                Analyze Abstract
-              </>
-            )}
-          </span>
-          {!isLoading && (
-            <div className="absolute inset-0 -z-0 bg-gradient-to-r from-primary via-primary/80 to-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          {isLoading ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" />
+              Analyzing…
+            </>
+          ) : (
+            <>
+              Analyze
+              <ArrowRight className="h-4 w-4" />
+            </>
           )}
         </Button>
       </div>

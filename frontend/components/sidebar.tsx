@@ -1,6 +1,6 @@
 'use client'
 
-import { FileText, History, Settings, Sparkles, Moon, Sun } from 'lucide-react'
+import { FileText, History, Settings, Sparkles, Moon, Sun, Layers } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 
@@ -14,6 +14,7 @@ interface SidebarProps {
 
 const menuItems = [
   { id: 'analyze', label: 'Analyze Paper', icon: FileText },
+  { id: 'batch', label: 'Batch Analyze', icon: Layers },
   { id: 'history', label: 'History', icon: History },
   { id: 'settings', label: 'Settings', icon: Settings },
 ]
@@ -54,11 +55,6 @@ export function Sidebar({ activeTab, onTabChange, isDark, onThemeToggle, onLogoC
               >
                 <Icon className="h-4 w-4" />
                 {item.label}
-                {item.id === 'analyze' && (
-                  <span className="ml-auto flex h-5 items-center rounded-md bg-primary/10 px-1.5 text-[10px] font-semibold text-primary">
-                    AI
-                  </span>
-                )}
               </button>
             )
           })}
