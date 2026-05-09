@@ -120,6 +120,36 @@ NEXT_PUBLIC_API_URL=https://your-backend-url
 
 ---
 
+## Deployment
+
+### Backend on Render
+
+A `render.yaml` blueprint at the repo root configures a free-tier web
+service with `/health` health checks.
+
+1. Push your fork to GitHub.
+2. Go to [render.com](https://render.com) → **New** → **Blueprint** → connect your repo.
+3. Render reads `render.yaml` and creates the service. You'll be prompted for the three secrets:
+   - `GROQ_API_KEY` — your Groq API key
+   - `SUPABASE_URL` — your Supabase project URL (used for history persistence)
+   - `SUPABASE_KEY` — your Supabase anon key
+4. First build takes ~5 minutes (the sentence-transformer model is downloaded
+   once and cached). Subsequent cold starts are ~30 seconds.
+
+The service will be live at `https://<your-service>.onrender.com`. Test with `GET /health`.
+
+> Note: the free tier sleeps after 15 min of inactivity. First request
+> after sleep pays the cold-start cost (~30 s).
+
+### Frontend on Vercel
+
+1. Import the repo on [vercel.com](https://vercel.com) (root directory = `frontend`).
+2. Add an environment variable:
+   `NEXT_PUBLIC_API_URL=https://<your-service>.onrender.com`
+3. Redeploy. The frontend will now hit your Render-hosted backend.
+
+---
+
 ## API
 
 | Method | Path | Purpose |
